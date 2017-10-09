@@ -1,0 +1,25 @@
+<h1>Earthquake Details:</h1>
+<p>
+  <strong>Time:</strong>
+  <%= @earthquake.time %>
+</p>
+<p>
+  <strong>Place:</strong>
+  <%= @earthquake.place %>
+</p>
+<p>
+  <strong>Magnitude:</strong>
+  <%= @earthquake.magnitude %>&nbsp;<%= @earthquake.magnitude_unit %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @earthquake.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @earthquake.longitude %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%= @earthquake.quake_type.capitalize %>
+</p>

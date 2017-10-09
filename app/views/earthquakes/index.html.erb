@@ -1,0 +1,24 @@
+<h1>Earthquakes affecting your city</h1>
+<%= link_to 'Back to Search', search_earthquakes_path %>
+<br>
+<br>
+<table class='table-cols'>
+  <tr>
+    <th>Time</th>
+    <th>Place</th>
+    <th>Magnitude</th>
+    <th>Distance</th>
+  </tr>
+ 
+  <% @earthquakes.each do |earthquake| %>
+    <tr>
+      <td><%= earthquake.time %></td>
+      <td><%= earthquake.place %></td>
+      <td><%= earthquake.magnitude %>&nbsp;<%= earthquake.magnitude_unit %></td>
+      <td><%= earthquake.distance %> miles</td>
+      <td><%= link_to 'Show', earthquake_path(earthquake) %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Back to Search', search_earthquakes_path %>
