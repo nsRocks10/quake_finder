@@ -1,0 +1,111 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (23.4ms)[0m  [1mCREATE TABLE "earthquakes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "time" datetime, "magnitude" float, "magnitude_unit" varchar, "latitude" float, "longitude" float, "place" varchar, "quake_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (4.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20171009030718')
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:40:52', '2017-10-09 07:40:52', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:40:52', '2017-10-09 07:40:52', 298486374)[0m
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+EarthquakesControllerTest: test_#index
+--------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:45:23', '2017-10-09 07:45:23', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:45:23', '2017-10-09 07:45:23', 298486374)[0m
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------
+EarthquakesControllerTest: test_should_get_index
+------------------------------------------------
+Processing by EarthquakesController#index as HTML
+  [1m[35mEarthquake Load (0.2ms)[0m  SELECT "earthquakes".* FROM "earthquakes" WHERE ("earthquakes"."time" BETWEEN '2017-09-09 07:45:23.896665' AND '2017-10-09 07:45:23.896699')
+  Rendered earthquakes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 701ms (Views: 693.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:46:45', '2017-10-09 07:46:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:46:45', '2017-10-09 07:46:45', 298486374)[0m
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+EarthquakesControllerTest: test_#index
+--------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:47:05', '2017-10-09 07:47:05', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:47:05', '2017-10-09 07:47:05', 298486374)[0m
+  [1m[35m (5.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+EarthquakesControllerTest: test_#index
+--------------------------------------
+Processing by EarthquakesController#index as HTML
+  Parameters: {"latitude"=>"34.25", "longitude"=>"-115.25", "start_date"=>"2017-10-08", "end_date"=>""}
+  [1m[35mEarthquake Load (0.1ms)[0m  SELECT "earthquakes".* FROM "earthquakes" WHERE ("earthquakes"."time" BETWEEN '2017-10-08 00:00:00.000000' AND '2017-10-09 07:47:05.957588')
+  Rendered earthquakes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 152ms (Views: 145.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:50:05', '2017-10-09 07:50:05', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:50:05', '2017-10-09 07:50:05', 298486374)[0m
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+EarthquakesControllerTest: test_#index
+--------------------------------------
+Processing by EarthquakesController#index as HTML
+  Parameters: {"latitude"=>"34.25", "longitude"=>"-115.25", "start_date"=>"2017-10-08", "end_date"=>""}
+  [1m[35mEarthquake Load (0.1ms)[0m  SELECT "earthquakes".* FROM "earthquakes" WHERE ("earthquakes"."time" BETWEEN '2017-10-08 00:00:00.000000' AND '2017-10-09 07:50:05.973872')
+  Rendered earthquakes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 166ms (Views: 158.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------
+EarthquakesControllerTest: test_#show
+-------------------------------------
+Processing by EarthquakesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEarthquake Load (0.1ms)[0m  [1mSELECT  "earthquakes".* FROM "earthquakes" WHERE "earthquakes"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "earthquakes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:50:28', '2017-10-09 07:50:28', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "earthquakes" ("time", "magnitude", "magnitude_unit", "latitude", "longitude", "place", "quake_type", "created_at", "updated_at", "id") VALUES ('2017-10-08 22:07:18.000000', 1.5, 'MyString', 1.5, 1.5, 'MyString', 'MyString', '2017-10-09 07:50:28', '2017-10-09 07:50:28', 298486374)[0m
+  [1m[35m (4.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+--------------------------------------
+EarthquakesControllerTest: test_#index
+--------------------------------------
+Processing by EarthquakesController#index as HTML
+  Parameters: {"latitude"=>"34.25", "longitude"=>"-115.25", "start_date"=>"2017-10-08", "end_date"=>""}
+  [1m[35mEarthquake Load (0.2ms)[0m  SELECT "earthquakes".* FROM "earthquakes" WHERE ("earthquakes"."time" BETWEEN '2017-10-08 00:00:00.000000' AND '2017-10-09 07:50:28.964974')
+  Rendered earthquakes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 153ms (Views: 143.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+-------------------------------------
+EarthquakesControllerTest: test_#show
+-------------------------------------
+Processing by EarthquakesController#show as HTML
+  Parameters: {"id"=>"two"}
+  [1m[36mEarthquake Load (0.1ms)[0m  [1mSELECT  "earthquakes".* FROM "earthquakes" WHERE "earthquakes"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  rollback transaction

@@ -1,0 +1,28 @@
+<h1>Find Earthquakes Affecting Your City</h1>
+<%= form_tag earthquakes_path, method: :get do %>
+  <p>
+  	<strong>Your City Coordinates in Degrees (Default is Los Angeles City):</strong>
+    <br>
+    <%= label_tag :latitude %>
+    <%= text_field_tag :latitude, '34.0522' %>&nbsp;N/-S
+    &nbsp;&nbsp;&nbsp;
+    <%= label_tag :longitude %>
+    <%= text_field_tag :longitude, '-118.2437' %>&nbsp;E/-W
+  </p>
+ 
+  <p>
+    <%= label_tag :start_date, 'Start Date YYYY-MM-DD (Default is past 30 days):' %>
+    <br>
+    <%= text_field_tag :start_date %>
+  </p>
+ 
+  <p>
+    <%= label_tag :end_date, 'End Date YYYY-MM-DD (Default is current date n time):' %>
+  	<br>
+    <%= text_field_tag :end_date %>
+  </p>
+ 
+  <p>
+    <%= submit_tag 'Find Earthquakes' %>
+  </p>
+<% end %>
