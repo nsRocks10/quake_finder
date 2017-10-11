@@ -2,7 +2,7 @@
 This RoR test project reads a csv file containing earthquakes data and returns a list of eathquakes that affected your city.
 
 How to run the project:
-1. Download n unzip the folder and go to the project folder in the terminal
+1. Download or clone the folder locally and go to the project folder in the terminal
 2. In the command line type the following cmds
 rake db:migrate
 rake db:seed
@@ -10,6 +10,7 @@ rake db:seed
 3. The above commands should run the migrations to create the sqlite3 db and populate it with the seed data (pulled from the csv file)
 4. You can check if your earthquakes db table is populated by typing 'rails db' and quering the sqlite3 db e.g.
 'select * from earthquakes LIMIT 10', the query should return 10 rows to make sure the migrations and seed cmds worked fine.
+You can exit the sqlite interface by typing '.quit'
 
 5. Run the rails server locally, using 'rails s' and navigate to http://localhost:3000/earthquakes/search
 Here you will be able to fill out a simple form. Just follow the instructions on the form and hit 'Find Earthquakes' button.

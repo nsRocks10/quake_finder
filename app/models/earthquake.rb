@@ -4,7 +4,7 @@ class Earthquake < ActiveRecord::Base
 	class << self
 		def find_by(start_date, end_date, curr_latitude, curr_longitude)
 			# First get all earthquakes within the date range
-			Earthquake.where(time: start_date..end_date).select do |earthquake|
+			Earthquake.where(time: start_date..end_date).order(time: :desc).select do |earthquake|
 				dist_between_city_n_quake =
 					haversine_distance(curr_latitude, curr_longitude, earthquake.latitude, earthquake.longitude)
 		  		

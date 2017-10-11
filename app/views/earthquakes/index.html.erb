@@ -1,7 +1,4 @@
 <h1>Earthquakes affecting your city</h1>
-<%= link_to 'Back to Search', search_earthquakes_path %>
-<br>
-<br>
 <table class='table-cols'>
   <tr>
     <th>Time</th>
@@ -10,7 +7,7 @@
     <th>Distance</th>
   </tr>
  
-  <% @earthquakes.each do |earthquake| %>
+  <% @earthquakes.first(10).each do |earthquake| %>
     <tr>
       <td><%= earthquake.time %></td>
       <td><%= earthquake.place %></td>
